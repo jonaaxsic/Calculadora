@@ -1,0 +1,123 @@
+/* Estilo general del cuerpo */
+body {
+    text-align: center;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(201, 181, 181);
+}
+
+/* Contenedor principal de la calculadora */
+#calculator {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%; /* Ancho ajustable para diferentes dispositivos */
+    max-width: 320px; /* Tamaño máximo */
+    height: auto; /* Altura ajustable */
+    background-color: rgb(100, 96, 96);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+}
+
+/* Estilo para el display */
+#display {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: 50px; /* Altura fija */
+    font-size: 18px; /* Tamaño del texto */
+    text-align: right; /* Alinea el texto a la derecha */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(214, 233, 217);
+    background-color: rgba(13, 27, 42, 0.3);
+    border: none;
+    box-sizing: border-box;
+}
+
+/* Estilo general para los botones */
+button {
+    width: calc(22% - 10px); /* Ancho proporcional con espaciado */
+    height: 45px; /* Altura fija */
+    font-size: 14px; /* Tamaño del texto */
+    margin: 5px; /* Espaciado entre botones */
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(13, 27, 42);
+    color: rgb(245, 245, 237);
+    box-shadow: -1px 1px 30px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Efectos al pasar el ratón sobre los botones */
+button:hover {
+    cursor: pointer;
+    background-color: rgba(13, 27, 42, 0.8);
+}
+
+/* Efectos al presionar un botón */
+button:active {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 5px 3px 1px rgba(0, 0, 0, 0.19),
+                0 1.5px 1.5px rgba(0, 0, 0, 0.23);
+}
+
+/* Botón para borrar */
+#ac {
+    color: rgb(241, 233, 240);
+    background-color: rgb(221, 172, 66);
+}
+
+/* Botón para eliminar un carácter */
+#de {
+    background-color: rgb(43, 226, 83);
+    color: rgb(11, 107, 7);
+    text-align: center;
+    align-items: center;
+}
+
+/* Botón igual */
+.equal-operador {
+    background-color: rgb(75, 0, 130);
+    color: white;
+}
+
+/* Diseño responsivo */
+@media (max-width: 600px) {
+    #calculator {
+        width: 95%; /* Reduce el ancho en dispositivos pequeños */
+        max-width: 280px; /* Tamaño máximo reducido */
+        padding: 10px;
+    }
+
+    button {
+        width: calc(22% - 5px); /* Ajusta el ancho de los botones */
+        font-size: 12px; /* Disminuye el tamaño del texto */
+        height: 40px; /* Reduce la altura de los botones */
+    }
+
+    #display {
+        font-size: 16px; /* Reduce el tamaño del texto en el display */
+    }
+}
+
+/* Diseño para pantallas grandes */
+@media (min-width: 1024px) {
+    #calculator {
+        width: 40%; /* Reduce el tamaño del contenedor en pantallas grandes */
+        max-width: 350px; /* Ajusta el tamaño máximo */
+    }
+
+    button {
+        height: 50px; /* Aumenta ligeramente la altura */
+        font-size: 16px; /* Tamaño del texto más legible */
+    }
+
+    #display {
+        font-size: 20px; /* Aumenta el tamaño del texto en el display */
+    }
+}
