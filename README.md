@@ -7,7 +7,7 @@
 
 ## 📌 Descripción
 
-**Calculadora web** desarrollada completamente por **Jonaaxsic**, utilizando **HTML, CSS y JavaScript puro**, sin frameworks.  
+**Calculadora web** 🖩 desarrollada  utilizando **HTML, CSS y JavaScript puro**, sin frameworks.  
 Permite realizar operaciones matemáticas básicas de forma rápida, clara y desde cualquier navegador moderno.
 
 ---
