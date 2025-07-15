@@ -36,16 +36,6 @@ Permite realizar operaciones matemáticas básicas de forma rápida, clara y des
 
 ---
 
-## 📁 Estructura del Proyecto
-
-
-Calculadora/
-├── index.html
-├── style.css
-└── script.js
-
----
-
 © 2025 - Desarrollado por **Jonaaxsic**  
 [![GitHub](https://img.shields.io/badge/GitHub-jonaaxsic-black?logo=github)](https://github.com/jonaaxsic)
 
