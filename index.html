@@ -1,42 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=., initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-  <title>calculadora</title>
+
+    <title>Calculadora Moderna</title>
 </head>
+
 <body>
-    <div id="calculator">
-        <input type="text" id="display" disabled>
-        <br>
-        <button id="ac" class="operador">C</button>
-        <button id="%" class="operador">%</button>
-        <button id="de" class="operador">⌫</button>
-        <<button id="/" class="operador" data-value="/">÷</button>
-        <br>
-        <button id="7">7</button>
-        <button id="8">8</button>
-        <button id="9">9</button>
-        <button id="*" class="operador" data-value="*">×</button>
-        <br>
-        <button id="4">4</button>
-        <button id="5">5</button>
-        <button id="6">6</button>
-        <button id="-" class="operador">-</button>
-        <br>
-        <button id="1">1</button>
-        <button id="2">2</button>
-        <button id="3">3</button>
-        <button id="+" class="operador">+</button>
-        <br>
-        <button id="00">00</button>
-        <button id="0">0</button>
-        <button id="." class="operador">.</button>
-        <button id="=" class="equal-operador">=</button>
+    <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+        <div class="calculator-container">
+            <div class="calculator-header">
+                <h2 class="calculator-title">
+                    <i class="fas fa-calculator me-2"></i>
+                    Calculadora
+                </h2>
+                <div class="header-buttons">
+                    <button id="menu-toggle" class="menu-toggle" aria-label="Menú de opciones">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="calculator-body">
+                <!-- Display -->
+                <div class="display-container">
+                    <input type="text" id="display" class="display-input" readonly placeholder="0">
+                    <div class="display-overlay">
+                        <span class="display-label">Resultado</span>
+                    </div>
+                </div>
+
+                <!-- Button Grid -->
+                <div class="button-grid">
+                    <!-- Row 1 -->
+                    <div class="button-row">
+                        <button id="ac" class="btn btn-clear" data-value="C">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                        <button id="%" class="btn btn-operator" data-value="%">
+                            <i class="fas fa-percentage"></i>
+                        </button>
+                        <button id="de" class="btn btn-delete" data-value="⌫">
+                            <i class="fas fa-backspace"></i>
+                        </button>
+                        <button id="/" class="btn btn-operator" data-value="/">
+                            <i class="fas fa-divide"></i>
+                        </button>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="button-row">
+                        <button id="7" class="btn btn-number" data-value="7">7</button>
+                        <button id="8" class="btn btn-number" data-value="8">8</button>
+                        <button id="9" class="btn btn-number" data-value="9">9</button>
+                        <button id="*" class="btn btn-operator" data-value="*">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="button-row">
+                        <button id="4" class="btn btn-number" data-value="4">4</button>
+                        <button id="5" class="btn btn-number" data-value="5">5</button>
+                        <button id="6" class="btn btn-number" data-value="6">6</button>
+                        <button id="-" class="btn btn-operator" data-value="-">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="button-row">
+                        <button id="1" class="btn btn-number" data-value="1">1</button>
+                        <button id="2" class="btn btn-number" data-value="2">2</button>
+                        <button id="3" class="btn btn-number" data-value="3">3</button>
+                        <button id="+" class="btn btn-operator" data-value="+">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div class="button-row">
+                        <button id="00" class="btn btn-number" data-value="00">00</button>
+                        <button id="0" class="btn btn-number" data-value="0">0</button>
+                        <button id="." class="btn btn-number" data-value=".">.</button>
+                        <button id="=" class="btn btn-equals" data-value="=">
+                            <i class="fas fa-equals"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Features Panel -->
+        <div id="advanced-panel" class="advanced-panel">
+            <div class="panel-header">
+                <h3 class="panel-title">
+                    <i class="fas fa-cog me-2"></i>
+                    Funciones Avanzadas
+                </h3>
+                <button id="close-panel" class="close-panel" aria-label="Cerrar panel">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="panel-content">
+                <!-- Sound Toggle -->
+                <div class="feature-section">
+                    <h4><i class="fas fa-volume-up me-2"></i>Sonido</h4>
+                    <div class="toggle-container">
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="sound-toggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span class="toggle-label">Efectos de sonido</span>
+                    </div>
+                </div>
+
+                <!-- Memory Functions -->
+                <div class="feature-section">
+                    <h4><i class="fas fa-memory me-2"></i>Memoria</h4>
+                    <div class="memory-buttons">
+                        <button id="memory-clear" class="memory-btn">MC</button>
+                        <button id="memory-recall" class="memory-btn">MR</button>
+                        <button id="memory-add" class="memory-btn">M+</button>
+                        <button id="memory-subtract" class="memory-btn">M-</button>
+                    </div>
+                    <div class="memory-indicator" id="memory-indicator">
+                        <i class="fas fa-circle"></i> Sin memoria
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div class="feature-section">
+                    <h4><i class="fas fa-history me-2"></i>Historial</h4>
+                    <div class="history-controls">
+                        <button id="clear-history" class="history-btn">
+                            <i class="fas fa-trash"></i> Limpiar
+                        </button>
+                        <button id="export-history" class="history-btn">
+                            <i class="fas fa-download"></i> Exportar
+                        </button>
+                    </div>
+                    <div class="history-list" id="history-list">
+                        <div class="history-empty">
+                            <i class="fas fa-clock"></i>
+                            <p>No hay cálculos recientes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scientific Functions -->
+                <div class="feature-section">
+                    <h4><i class="fas fa-calculator me-2"></i>Científica</h4>
+                    <div class="scientific-buttons">
+                        <button class="sci-btn" data-function="sin">sin</button>
+                        <button class="sci-btn" data-function="cos">cos</button>
+                        <button class="sci-btn" data-function="tan">tan</button>
+                        <button class="sci-btn" data-function="log">log</button>
+                        <button class="sci-btn" data-function="ln">ln</button>
+                        <button class="sci-btn" data-function="sqrt">√</button>
+                        <button class="sci-btn" data-function="square">x²</button>
+                        <button class="sci-btn" data-function="pi">π</button>
+                        <button class="sci-btn" data-function="e">e</button>
+                        <button class="sci-btn" data-function="factorial">!</button>
+                    </div>
+                </div>
+
+                <!-- Copy/Export -->
+                <div class="feature-section">
+                    <h4><i class="fas fa-copy me-2"></i>Utilidades</h4>
+                    <div class="utility-buttons">
+                        <button id="copy-result" class="utility-btn">
+                            <i class="fas fa-copy"></i> Copiar resultado
+                        </button>
+                        <button id="paste-value" class="utility-btn">
+                            <i class="fas fa-paste"></i> Pegar valor
+                        </button>
+                        <button id="show-shortcuts" class="utility-btn">
+                            <i class="fas fa-keyboard"></i> Atajos de teclado
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="feature-section">
+                    <h4><i class="fas fa-chart-bar me-2"></i>Estadísticas</h4>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-label">Operaciones:</span>
+                            <span class="stat-value" id="operation-count">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Más usado:</span>
+                            <span class="stat-value" id="most-used">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keyboard Shortcuts Modal -->
+        <div id="shortcuts-modal" class="shortcuts-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-keyboard me-2"></i>Atajos de Teclado</h3>
+                    <button id="close-shortcuts" class="close-modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="shortcut-category">
+                        <h4>Números y Operaciones</h4>
+                        <div class="shortcut-item">
+                            <kbd>0-9</kbd>
+                            <span>Números</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>+</kbd>
+                            <span>Suma</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>-</kbd>
+                            <span>Resta</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>*</kbd>
+                            <span>Multiplicación</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>/</kbd>
+                            <span>División</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>.</kbd>
+                            <span>Punto decimal</span>
+                        </div>
+                    </div>
+                    <div class="shortcut-category">
+                        <h4>Controles</h4>
+                        <div class="shortcut-item">
+                            <kbd>Enter</kbd>
+                            <span>Calcular</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Escape</kbd>
+                            <span>Limpiar</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Backspace</kbd>
+                            <span>Borrar último</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl+C</kbd>
+                            <span>Copiar resultado</span>
+                        </div>
+                        <div class="shortcut-item">
+                            <kbd>Ctrl+V</kbd>
+                            <span>Pegar valor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
+
 </html>
