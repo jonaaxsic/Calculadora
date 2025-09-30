@@ -1,11 +1,8 @@
 # 🧮 Calculadora Web Avanzada
 
-![HTML](https://img.shields.io/badge/HTML-5-orange?logo=html5)
-![CSS](https://img.shields.io/badge/CSS-3-blue?logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple?logo=bootstrap)
-![FontAwesome](https://img.shields.io/badge/FontAwesome-6.4-blue?logo=fontawesome)
-[![GitHub Pages](https://img.shields.io/badge/Live-Demo-green?logo=github)](https://jonaaxsic.github.io/Calculadora/)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) 
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white) [![GitHub](https://img.shields.io/badge/GitHub-Jonaaxsic-121011?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Jonaaxsic)
 
 ## 📌 Descripción
 
@@ -157,4 +154,5 @@
 
 ---
 
-© 2025 -
+© 2025 
+[![GitHub](https://img.shields.io/badge/GitHub-Jonaaxsic-121011?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Jonaaxsic)
